@@ -7,7 +7,7 @@ const Menu = (props) => {
   const {setShowModal} = props;
 
   function Foodmenu({ menu }) {
-    return <li>{menu} <button onClick={() => handleDelete(menu)}>x</button></li>;
+    return <li  onClick={() => ModalOpen(food.foodType)}>{menu} <button onClick={() => handleDelete(menu)}>x</button></li>;
   }
 
   const handlSearch = (type) => {
@@ -51,8 +51,8 @@ const Menu = (props) => {
       {foods
         .filter((food) => searchType === "전체" || food.foodType === searchType)
         .map((food, idx) => (
-          <div key={idx} className="menuDiv" onClick={() => ModalOpen(food.foodType)}>
-            <h3>{food.foodType} <button onClick={() => handleDeleteTitle(food.foodType)}>x</button></h3>
+          <div key={idx} className="menuDiv">
+            <h3  onClick={() => ModalOpen(food.foodType)}>{food.foodType} <button onClick={() => handleDeleteTitle(food.foodType)}>x</button></h3>
             <ul>
               {food.foodMenu.map((menu, idx) => (
                 // <li key={menu + idx}>{menu}</li>
