@@ -15,7 +15,7 @@ const Menu = (props) => {
     setSearchType(type);
   };
   const handleDelete = (menu) => {
-    console.log("삭제할 메뉴:", menu);ㅞ
+    console.log("삭제할 메뉴:", menu);
   
       setFoods((prevFoods) =>
       prevFoods.map((food) => ({
